@@ -1,6 +1,6 @@
 const pipetchReduce = require('./index.js')
 
-test('should call the fetcher promise-aware function with mockData, and apply the provided functions', () => {
+test('should call the fetcher promise-aware function with mockData, and map over each item to execute corresponding mapKeys tuples', () => {
   const fetcher = d => Promise.resolve(d)
   const mockData = JSON.stringify([
     { id: 2, name: 'bar' },
