@@ -1,0 +1,17 @@
+{
+  "name": "pipetch",
+  "version": "1.0.0",
+  "description": "A tiny utility to fetch then pipe",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [
+    "js",
+    "fetch",
+    "pipe",
+    "fp"
+  ],
+  "author": "elcoosp",
+  "license": "MIT"
+}
