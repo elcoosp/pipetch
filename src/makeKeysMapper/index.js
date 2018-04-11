@@ -11,6 +11,4 @@ const makeKeysMapper = mapKeyObject =>
     []
   )
 
-makeKeysMapper({ g: 6, f: 4 })
-
 module.exports = makeKeysMapper
