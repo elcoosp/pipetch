@@ -4,7 +4,8 @@
   "description": "A tiny utility to fetch then pipe",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "dev": "nodemon ./src/index.js"
   },
   "keywords": [
     "js",
@@ -15,6 +16,7 @@
   "author": "elcoosp",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3"
   }
 }
