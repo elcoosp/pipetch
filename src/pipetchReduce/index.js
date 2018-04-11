@@ -4,7 +4,7 @@ const arrayize = require('../arrayize')
 const makeKeysMapper = require('../makeKeysMapper')
 
 // Sugar
-const json = res => JSON.parse(res)
+const json = res => res.json()
 const map = mapper => arr => arr.map(mapper)
 
 /**
