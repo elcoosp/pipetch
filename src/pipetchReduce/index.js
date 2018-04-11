@@ -1,11 +1,11 @@
 const pipetch = require('../pipetch')
 const pipe = require('../pipe')
+const arrayize = require('../arrayize')
 const makeKeysMapper = require('../makeKeysMapper')
 
 // Sugar
 const json = res => JSON.parse(res)
 const map = mapper => arr => arr.map(mapper)
-const arrayize = x => (!x ? [] : Array.isArray(x) ? x : [x])
 
 /**
  * @param  {function} fetcher Fetch provider promise-aware function
@@ -14,6 +14,7 @@ const arrayize = x => (!x ? [] : Array.isArray(x) ? x : [x])
  * @param  {*} fetchArgs Fetching args from the fetcher function
  * @returns  {(keysMapper: Object, transformers: ...function) => (fetchArgs: *) => Promise}
  */
+
 const pipetchReduce = fetcher => (keysMapper, ...transformers) => (
   ...fetchArgs
 ) =>
