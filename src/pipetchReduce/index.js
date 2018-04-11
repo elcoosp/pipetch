@@ -2,10 +2,7 @@ const pipetch = require('../pipetch')
 const pipe = require('../pipe')
 const arrayize = require('../arrayize')
 const makeKeysMapper = require('../makeKeysMapper')
-
-// Sugar
-const json = res => res.json()
-const map = mapper => arr => arr.map(mapper)
+const unjsonize = require('../unjsonize')
 
 /**
  * @param  {function} fetcher Fetch provider promise-aware function
@@ -19,9 +16,9 @@ const pipetchReduce = fetcher => (keysMapper, ...transformers) => (
   ...fetchArgs
 ) =>
   pipetch(fetcher)(...fetchArgs)(
-    json,
+    unjsonize,
     arrayize,
-    map(pipe(...makeKeysMapper(keysMapper))),
+    data => data.map(pipe(...makeKeysMapper(keysMapper))),
     ...transformers
   )
 
